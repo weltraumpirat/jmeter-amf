@@ -260,7 +260,7 @@ public class AmfRequest extends HTTPSampler2 implements Interruptible {
             	log.debug("Decoding response and saving in ${"+resVar+"}");
             	
             	// Decode response
-            	String amfResXml = AmfXmlConverter.convertAmfMessageToXml(res.getResponseData());
+            	String amfResXml = AmfXmlConverter.convertAmfMessageToXml(res.getResponseData(),true);
             	
             	JMeterVariables variables = JMeterContextService.getContext().getVariables();
             	variables.put(resVar, amfResXml);
